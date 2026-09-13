@@ -11,10 +11,10 @@ else
   exit 1
 fi
 
-docker rm -f e-symistral-worker >/dev/null 2>&1 || true
+docker rm -f mistral35-worker >/dev/null 2>&1 || true
 
 docker run -d \
-  --name e-symistral-worker \
+  --name mistral35-worker \
   --restart unless-stopped \
   --network host \
   --shm-size "${SHM_SIZE}" \
@@ -46,4 +46,4 @@ docker run -d \
 
 echo
 echo "Worker container started."
-echo "Logs: docker logs -f e-symistral-worker"
+echo "Logs: docker logs -f mistral35-worker"

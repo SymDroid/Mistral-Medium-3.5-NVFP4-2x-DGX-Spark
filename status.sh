@@ -9,7 +9,7 @@ if [[ -f .env ]]; then
 fi
 
 echo "=== Docker ==="
-docker ps --filter "name=e-symistral" \
+docker ps --filter "name=mistral35" \
   --format "table {{.Names}}\t{{.Status}}\t{{.Image}}"
 
 echo

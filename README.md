@@ -86,7 +86,7 @@ The head starts Ray and waits until the cluster reports two GPUs.
 Follow the logs:
 
 ```bash
-docker logs -f e-symistral
+docker logs -f mistral35
 ```
 
 ## 3. Start the worker
@@ -100,7 +100,7 @@ On **DGX Spark / 192.168.100.10**:
 Follow the logs:
 
 ```bash
-docker logs -f e-symistral-worker
+docker logs -f mistral35-worker
 ```
 
 As soon as the worker joins Ray, the head should detect `/2.0 GPU` and launch
@@ -129,7 +129,7 @@ http://192.168.100.11:8017/v1
 For Onyx, use that URL and the served model name:
 
 ```text
-e-symistral
+mistral35
 ```
 
 ## Important vLLM flags
@@ -167,14 +167,14 @@ descriptions, or shared document context recur across requests.
 
 ```bash
 # Head logs
-docker logs -f e-symistral
+docker logs -f mistral35
 
 # Worker logs
-docker logs -f e-symistral-worker
+docker logs -f mistral35-worker
 
 # Resource usage
-docker stats e-symistral
-docker stats e-symistral-worker
+docker stats mistral35
+docker stats mistral35-worker
 
 # NVIDIA telemetry
 nvidia-smi
